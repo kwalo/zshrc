@@ -1,0 +1,10 @@
+Personal configuration for zsh. To use it, clone this repository to ~/.zsh and
+add following line to ~/.zshrc:
+    source ~/.zsh/profile
+
+Features:
+ * fancy prompt (can be used by source ~/.zsh/prompt)
+ * sane autocompletion configuration
+ * autocd
+ * colorful output of grep and ls
+ * shortcut aliases (l=ls ll='ls -l', etc.)
