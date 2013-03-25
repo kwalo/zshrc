@@ -62,8 +62,7 @@ setprompt () {
     PR_URCORNER=${altchar[k]:--}
     test -z $HOST && HOST=$(hostname)
 
-    if [[ $HOST = mercury || $HOST = jupiter ]]; then MCOLOR=$DEF
-    elif [[ $HOST = runner ]]; then MCOLOR=$RED
+    if [[ -z $SSH_CONNECTION ]]; then MCOLOR=$DEF
     else MCOLOR=$WHITE
     fi
 
