@@ -21,7 +21,6 @@ zstyle ':completion:*' substitute 1
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
     '*?.cpp~' '*?.pyc' '*?.java~'
-zstyle :compinstall filename '/home/kaw/.zshrc'
 zstyle ':mime:*' mailcap ~/.mailcap
 
 autoload -U compinit
@@ -78,9 +77,6 @@ alias o='xdg-open'
 alias gut=git
 
 [[ -x '/usr/bin/htop' ]] && alias top='/usr/bin/htop'
-
-# rvm installer added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 VENV_PRESERVE_PS1=1
 if [[ -e /home/kwalo/.profile ]]; then
