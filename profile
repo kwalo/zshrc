@@ -75,6 +75,7 @@ alias lw='/bin/ls | wc -l'
 alias grep='/bin/grep --colour=auto'
 alias o='xdg-open'
 alias gut=git
+alias less='less -R'
 
 [[ -x '/usr/bin/htop' ]] && alias top='/usr/bin/htop'
 
