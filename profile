@@ -45,13 +45,12 @@ setopt autocd \
     rm_star_silent
 bindkey -e
 # End of lines configured by zsh-newuser-install
-test -f ~/.zsh/prompt && source ~/.zsh/prompt
+source ~/.zsh/prompt
 if [ -d ~/.zsh/functions ]; then
     fpath=(~/.zsh/functions $fpath)
 fi
 
-autoload -U venvinit;
-typeset -i -f venvinit > /dev/null && venvinit
+autoload -U venvinit; venvinit
 
 # Environment variables
 export EDITOR="vim" PAGER="less" 
