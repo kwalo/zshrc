@@ -76,6 +76,7 @@ alias grep='/bin/grep --colour=auto'
 alias o='xdg-open'
 alias gut=git
 alias less='less -R'
+alias jhs='jhbuild shell'
 
 [[ -x '/usr/bin/htop' ]] && alias top='/usr/bin/htop'
 
