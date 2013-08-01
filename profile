@@ -50,7 +50,8 @@ if [ -d ~/.zsh/functions ]; then
     fpath=(~/.zsh/functions $fpath)
 fi
 
-autoload -U venvinit; venvinit
+autoload -U venvinit;
+typeset -i -f venvinit > /dev/null && venvinit
 
 # Environment variables
 export EDITOR="vim" PAGER="less" 
