@@ -15,15 +15,6 @@ precmd () {
     fi
 
     psvar=("$GITBRANCH" "$JHBUILD" "$venv_name")
-    # More useful title for screen
-    if [[ $TERM == 'screen' ]]; then
-        print -nP "\ekzsh $USER: ${PWD/$HOME/~}\e\\"
-    fi
-    # Also set title for xterm, but rely on $DISPLAY, not on $TERM as screen
-    # overrides it
-    if [[ -n $PR_WAS_XTERM ]]; then
-        print -Pn "\e]0;%n@%m: %~\a"
-    fi
 
     local TERMWIDTH
     local branchlen=${#${(%):-$GITBRANCH}}
