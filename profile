@@ -180,11 +180,12 @@ source ~/.zsh/prompt
 
 ### Aliases
 
+# cd
 alias ...=../..
 alias ....=../../..
 alias .....=../../../..
-alias srm='sudo rm'
-alias j="jobs"
+
+# ls
 alias ls='/bin/ls --color=auto'
 alias l='/bin/ls --color=auto'
 alias ll='/bin/ls --color=auto -lh'
@@ -192,8 +193,21 @@ alias la='/bin/ls --color=auto -ah'
 alias lla='/bin/ls --color=auto -lah'
 alias lal='/bin/ls --color=auto -alh'
 alias lw='/bin/ls | wc -l'
+
+# sane defaults for commands
 alias grep='/bin/grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,node_modules}'
-alias o='open_command'
 alias less='less -R'
+alias o='open_command'
+
+# shortcuts
+alias srm='sudo rm'
+alias j="jobs"
+
+# git
+alias gd='git diff'
+alias gst='git status'
+alias glg='git log --stat'
+alias gcam='git commit -am'
+alias gp='git push'
 
 ###
