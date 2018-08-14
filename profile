@@ -105,7 +105,7 @@ function open_command() {
         darwin*)  open_cmd='open' ;;
         cygwin*)  open_cmd='cygstart' ;;
         linux*)   [[ $(uname -a) =~ "Microsoft" ]] && \
-                     open_cmd='cmd.exe /c' || \
+                     open_cmd='cmd.exe /c start' || \
                      open_cmd='xdg-open'  ;;
         msys*)    open_cmd='start ""'  ;;
         *)        echo "Platform $OSTYPE not supported"
