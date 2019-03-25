@@ -20,7 +20,7 @@ PROMPT2='. '
 
 # Display non-zero exit status in red
 _return_status="%(?.. %F{red}%? ⚡%f )"
-_current_caret="%(?.%F{white}»%f.%F{red}⚡%f)"
+_current_caret="%(?.%F{white}»%f.%F{red}»%f)"
 # Display number of background jobs in magenta
 _jobs_status="%(1j. %F{magenta}%j ↓%f .)"
 
