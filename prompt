@@ -43,3 +43,8 @@ function git_prompt_info {
   echo "${GIT_PROMPT_PREFIX}${ref}${GIT_PROMPT_SUFFIX}"
 }
 
+case $TERM in
+  st*|xterm*)
+    precmd () { print -Pn "\e]0;%~\a" }
+esac
+
