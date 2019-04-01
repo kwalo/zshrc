@@ -45,17 +45,6 @@ zstyle ':completion:complete:*' cache-path $ZDOTDIR/cache
 zstyle ':completion:complete:*' use-cache 1
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
     '*?.cpp~' '*?.pyc' '*?.java~'
-# Don't complete uninteresting users
-zstyle ':completion:*:*:*:users' ignored-patterns \
-        adm amanda apache at avahi avahi-autoipd beaglidx bin cacti canna \
-        clamav daemon dbus distcache dnsmasq dovecot fax ftp games gdm \
-        gkrellmd gopher hacluster haldaemon halt hsqldb ident junkbust kdm \
-        ldap lp mail mailman mailnull man messagebus  mldonkey mysql nagios \
-        named netdump news nfsnobody nobody nscd ntp nut nx obsrun openvpn \
-        operator pcap polkitd postfix postgres privoxy pulse pvm quagga radvd \
-        rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
-        usbmux uucp vcsa wwwrun xfs '_*'
-
 zstyle ':completion:*' completer _complete _correct _expand
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' menu select=long
@@ -202,6 +191,7 @@ alias o='open_command'
 # shortcuts
 alias srm='sudo rm'
 alias j="jobs"
+alias ds="du -sh"
 
 # git
 alias gd='git diff'
