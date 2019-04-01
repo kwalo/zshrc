@@ -19,8 +19,7 @@ ${_current_caret} '
 PROMPT2='. '
 
 # Display non-zero exit status in red
-_return_status="%(?.. %F{red}%? ⚡%f )"
-_current_caret="%(?.%F{white}»%f.%F{red}⚡%f)"
+_current_caret="%(?.%F{white}>%f.%F{red}>%f)"
 # Display number of background jobs in magenta
 _jobs_status="%(1j. %F{magenta}%j ↓%f .)"
 
@@ -38,7 +37,7 @@ function current_dir {
 
 function git_prompt_info {
   local ref=$(git symbolic-ref --short HEAD 2> /dev/null) || return 0
-  local GIT_PROMPT_PREFIX="%F{green}"
+  local GIT_PROMPT_PREFIX="%F{46}"
   local GIT_PROMPT_SUFFIX="%f"
   echo "${GIT_PROMPT_PREFIX}${ref}${GIT_PROMPT_SUFFIX}"
 }
