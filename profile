@@ -184,8 +184,13 @@ alias lal='/bin/ls --color=auto -alh'
 alias lw='/bin/ls | wc -l'
 
 # sane defaults for commands
-alias grep='/bin/grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,node_modules}'
 alias less='less -R'
+if [[ $(readlink -f $(which grep)) != $(which grep) ]]; then
+  # grep is a symlink. Most probably to busybox. In such case it does
+  # not support GNU options
+else
+  alias grep='/bin/grep --colour=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,node_modules}'
+fi
 alias o='open_command'
 
 # shortcuts

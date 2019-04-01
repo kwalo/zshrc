@@ -20,7 +20,7 @@ PROMPT2='. '
 
 # Display non-zero exit status in red
 _return_status="%(?.. %F{red}%? ⚡%f )"
-_current_caret="%(?.%F{white}»%f.%F{red}⚡%f)"
+_current_caret="%(?.%F{white}»%f.%F{red}»%f)"
 # Display number of background jobs in magenta
 _jobs_status="%(1j. %F{magenta}%j ↓%f .)"
 
@@ -42,4 +42,9 @@ function git_prompt_info {
   local GIT_PROMPT_SUFFIX="%f"
   echo "${GIT_PROMPT_PREFIX}${ref}${GIT_PROMPT_SUFFIX}"
 }
+
+case $TERM in
+  st*|xterm*)
+    precmd () { print -Pn "\e]0;%~\a" }
+esac
 
