@@ -37,7 +37,7 @@ function current_dir {
 
 function git_prompt_info {
   local ref=$(git symbolic-ref --short HEAD 2> /dev/null) || return 0
-  local GIT_PROMPT_PREFIX="%F{46}"
+  local GIT_PROMPT_PREFIX="%F{green}"
   local GIT_PROMPT_SUFFIX="%f"
   echo "${GIT_PROMPT_PREFIX}${ref}${GIT_PROMPT_SUFFIX}"
 }
