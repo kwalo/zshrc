@@ -13,13 +13,13 @@
 # ----------------------------------------------------------------------------
 
 PROMPT='
-$(current_dir)${_jobs_status}$(git_prompt_info) 
+$(current_dir)${_jobs_status}$(git_prompt_info)
 ${_current_caret} '
 
 PROMPT2='. '
 
 # Display non-zero exit status in red
-_current_caret="%(?.%F{white}>%f.%F{red}>%f)"
+_current_caret="%(?.%F{white}❯%f.%F{red}❯%f)"
 # Display number of background jobs in magenta
 _jobs_status="%(1j. %F{magenta}%j ↓%f .)"
 
