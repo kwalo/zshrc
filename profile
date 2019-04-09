@@ -13,7 +13,7 @@ ZDOTDIR=${HOME}/.zsh
 fpath=(${ZDOTDIR}/completion $fpath)
 
 export EDITOR="vim" \
-       PAGER="less" 
+       PAGER="less"
 
 if [[ -d ~/.local/bin ]]; then
     export PATH=~/.local/bin:$PATH
@@ -40,7 +40,7 @@ setopt hist_ignore_dups \
 zstyle ':completion:*' matcher-list 'r:|[._-]=** r:|=**'
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w" 
+zstyle ':completion:*:*:*:*:processes' command "ps -o pid,user,comm"
 zstyle ':completion:complete:*' cache-path $ZDOTDIR/cache
 zstyle ':completion:complete:*' use-cache 1
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
@@ -76,7 +76,8 @@ setopt autocd \
     auto_param_slash \
     prompt_subst \
     rm_star_silent
-bindkey -e
+
+bindkey -v
 
 ###
 
@@ -109,6 +110,13 @@ function open_command() {
         nohup $open_cmd "$@" &>/dev/null
     fi
 }
+
+# Pipe last command from history to $PAGER
+function p() {
+  EDITOR=cat fc -1 | $PAGER
+}
+
+#
 
 ###
 
@@ -143,14 +151,17 @@ fi
 alias o='open_command'
 
 # shortcuts
+alias h=history
 alias srm='sudo rm'
 alias j="jobs"
 alias ds="du -sh"
 
 # git
+alias gco='git checkout'
 alias gd='git diff'
 alias gst='git status'
 alias glg='git log --stat'
+alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp='git push'
 
