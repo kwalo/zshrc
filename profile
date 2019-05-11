@@ -77,7 +77,7 @@ setopt autocd \
     prompt_subst \
     rm_star_silent
 
-bindkey -v
+bindkey -e
 
 ###
 
