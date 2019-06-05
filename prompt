@@ -29,7 +29,7 @@ function current_dir {
   if [[ $(echo -n $PWD | wc -c) -gt ${_max_pwd_length} ]]; then
     echo "%B%F{white}%-2~ ... %3~%f%b "
   else
-   echo "%B%F{white}%d%f%b "
+   echo "%B%F{white}%~%f%b "
   fi
 }
 
