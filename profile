@@ -165,4 +165,7 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gp='git push'
 
+# awk
+alias awks="awk -F '\ \ +'"
+
 ###
