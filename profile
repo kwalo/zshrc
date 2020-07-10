@@ -59,6 +59,8 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' substitute true
 zstyle ':completion:*' verbose true
 
+autoload -U calendar
+
 autoload -U compinit
 compinit
 
