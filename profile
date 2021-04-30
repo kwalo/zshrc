@@ -59,10 +59,29 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' substitute true
 zstyle ':completion:*' verbose true
 
-autoload -U calendar
-
 autoload -U compinit
 compinit
+
+###
+
+### Calendar
+
+zstyle ':datetime:calendar:date-format' '%a %b %d %Y, %H:%M'
+autoload -U calendar calendar_add calendar_edit
+
+alias ca=calendar_add
+# Show calendar entries for today
+function ct() {
+  calendar "$(date +'%Y-%m-%d, 00:00')" "$(date +'%Y-%m-%d, 23:59')"
+}
+# Show following calendar entries
+function ctt() {
+  calendar -r "$(date +'%Y-%m-%d, 23:59')"
+}
+# Show calendar for current year
+function cy() {
+  cal $(date +%Y)
+}
 
 ###
 
