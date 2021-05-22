@@ -72,11 +72,11 @@ autoload -U calendar calendar_add calendar_edit
 alias ca=calendar_add
 # Show calendar entries for today
 function ct() {
-  calendar "$(date +'%Y-%m-%d, 00:00')" "$(date +'%Y-%m-%d, 23:59')"
+  calendar "$(date -d 24:00)"
 }
-# Show following calendar entries
+# Show calendar entries for tomorrow
 function ctt() {
-  calendar -r "$(date +'%Y-%m-%d, 23:59')"
+  calendar "$(date -d 24:00)" "$(date -d 48:00)"
 }
 # Show calendar for current year
 function cy() {
@@ -134,7 +134,7 @@ function open_command() {
 
 # Pipe last command from history to $PAGER
 function p() {
-  EDITOR=cat fc -1 | $PAGER
+  fc -e cat -- -1 | $PAGER
 }
 
 #
